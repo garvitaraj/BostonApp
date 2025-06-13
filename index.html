@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston Price Predictor</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; background-color: #f2f2f2; }
+        input { margin: 10px; padding: 10px; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Boston House Price Predictor</h2>
+    <form action="/predict" method="POST">
+        {% for i in range(13) %}
+        <input type="text" name="feature{{ i }}" placeholder="Feature {{ i+1 }}"><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
